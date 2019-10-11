@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.test03">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"
+                  android:screenOrientation="portrait">
+            <intent-filter><!--隐示注册跳转页面传值-->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--每一个activity都需要进行注册-->
+        <activity android:name="com.example.test03.MainActivity2"></activity>
+        <activity android:name="com.example.test03.UserPhone">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.example.test03.UserPhone"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".UserMessage">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.example.test03.UserMessage"/>
+            </intent-filter>
+        </activity>
+    </application>
+    <!--赋予给应用可以调用拨号键盘-->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+</manifest>
